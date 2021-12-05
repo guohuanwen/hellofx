@@ -41,7 +41,18 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>${javafx.maven.plugin.version}</version>
                 <configuration>
-                    <mainClass>HelloFX</mainClass>
+                    <mainClass>org.openjfx.App</mainClass>
+                    <stripDebug>true</stripDebug>
+                    <compress>2</compress>
+                    <noHeaderFiles>true</noHeaderFiles>
+                    <noManPages>true</noManPages>
+                    <launcher>JavaFXSample</launcher>
+                    <jlinkImageName>build-link</jlinkImageName>
+                    <jlinkZipName>sample-zip</jlinkZipName>
+                    <options>
+                        <option>--add-exports</option>
+                        <option>javafx.controls/com.sun.javafx.scene.control.behavior=com.jfoenix</option>
+                    </options>
                 </configuration>
             </plugin>
         </plugins>
